@@ -71,7 +71,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="flex flex-col bg-emerald-800 w-full mx-auto justify-center">
+      <div className="flex flex-col bg-neutral-900 w-full mx-auto justify-center">
         <div className="flex flex-col items-center  justify-center py-6">
           <h2 className="text-4xl font-bold text-white">Contact Us</h2>
           <p className="text-white py-2">
@@ -80,7 +80,7 @@ const AboutUs = () => {
         </div>
         {/* Form */}
         <div className="mx-auto w-full lg:w-[80%]">
-          <form className="bg-emerald-800 shadow-md flex flex-col justify-center rounded px-8 pt-6 pb-8 mb-8">
+          <form className="bg-neutral-900 shadow-md flex flex-col justify-center rounded px-8 pt-6 pb-8 mb-8">
             <div className="mb-4">
               <label
                 htmlFor="name"
@@ -121,7 +121,7 @@ const AboutUs = () => {
             <div className="flex items-center justify-between">
               <button
                 type="button"
-                className="bg-green-900 hover:bg-green-950 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+                className="bg-neutral-900 hover:border-2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
               >
                 Send
               </button>

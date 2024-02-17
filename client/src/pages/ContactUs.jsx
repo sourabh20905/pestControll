@@ -38,16 +38,60 @@ const ContactUs = () => {
           </form>
         </div>
       </div>
-      <div className="flex flex-col bg-neutral-900 w-full mx-auto justify-center">
-        <div className="flex flex-col items-center justify-center py-6">
+      <div className="flex flex-col bg-neutral-900 w-full mx-auto justify-center   ">
+        <div className="flex flex-col items-center justify-center py-6 ">
           <h2 className="text-4xl font-bold text-white">Contact Us</h2>
           <p className="text-white py-2">
             Call or Message Us for a Free Quote!
           </p>
         </div>
-        <div className="mx-auto w-full lg:w-[80%]">
-          <form className="bg-neutral-900 shadow-md flex flex-col justify-center rounded px-8 pt-6 pb-8 mb-8">
-            {/* Form Fields */}
+        <div className="mx-auto w-full   lg:w-[80%]">
+        <form className="bg-neutral-900 shadow-md flex flex-col justify-center rounded px-8 pt-3 mb-8">
+            <div className="mb-4">
+              <label
+                htmlFor="name"
+                className="block text-gray-700 text-sm font-bold mb-2"
+              >
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your Name"
+                  className="shadow placeholder-emerald-800 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </label>
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="email"
+                className="block text-gray-700 text-sm font-bold mb-2"
+              >
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Your Email"
+                  className="shadow appearance-none border placeholder-emerald-800 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </label>
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="message"
+                className="block text-gray-700 text-sm font-bold mb-2"
+              ></label>
+              <textarea
+                id="message"
+                placeholder="Your Message"
+                className="shadow appearance-none placeholder-emerald-800 border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              ></textarea>
+            </div>
+            <div className="flex items-center justify-between">
+              <button
+                type="button"
+                className="bg-neutral-900 hover:border-2 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+              >
+                Send
+              </button>
+            </div>
           </form>
         </div>
         <Footer />

@@ -10,7 +10,7 @@ import fumiseal from "../assets/fumiseal.webp";
 import honeybee from "../assets/honeybee.webp";
 import mosquito from "../assets/mosquito.png";
 import Rodent from "../assets/Rodent-Control.png";
-import Card from "../components/Card";
+
 import four from "../assets/four.webp";
 import three from "../assets/three.webp";
 import TestimonialSlider from "../components/Testimonial";
@@ -126,16 +126,23 @@ const Home = () => {
                   About us
                 </button>
               </div>
-              <img src={four} alt="" className="w-1/2 " />
+              <div className="flex justify-center items-center h-screen">
+                <img src={four} alt="" className="object-cover w-full h-full " />
+              </div>
             </div>
             <div className="flex">
-              <img src={three} alt="" className="w-1/2" />
+              <div className="flex justify-center items-center h-screen">
+                <img src={three} alt="" className="object-cover w-full h-full" />
+              </div>
+
               <div className="w-1/2 flex flex-col justify-center items-center">
-                <h1>
+                <h1 className=" text-4xl font-bold p-14">
                   "Don't let pests take over. Take control with our expert
                   services."
                 </h1>
-                <button>Contact</button>
+                <button className=" w-[240px] m-8 p-6 bg-[#4d7c0f] mx-auto ">
+                  Contact
+                </button>
                 <span>Or Call us : 91XXXXXXXXX</span>
               </div>
             </div>
