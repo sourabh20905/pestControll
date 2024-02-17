@@ -1,4 +1,7 @@
-import React from "react";
+
+import React, { lazy, Suspense } from "react";
+import LazyLoad from "react-lazyload";
+
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import aboutimg from "../assets/about.webp";
@@ -8,11 +11,13 @@ import m4 from "../assets/4.webp";
 import m3 from "../assets/3.webp";
 import m6 from "../assets/6.webp";
 
-import Cards from "../components/AboutCard";
 
-function AboutUs() {
+const Cards = lazy(() => import("../components/AboutCard"));
+const Footer = lazy(() => import("../components/Footer"));
+
+const AboutUs = () => {
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex bg-white flex-col items-center w-full">
       <div className="max-w-2xl mx-auto text-center mb-8">
         <h2 className="text-4xl font-bold mb-4">About Us</h2>
         <p className="mb-4 font-bold">
@@ -29,13 +34,15 @@ function AboutUs() {
           Contact us today to find out more about how we can help you!
         </p>
       </div>
-      <div className="max-w-screen-lg mx-auto mb-8">
-        <img
-          src={aboutimg}
-          alt="Your Image"
-          className="h-auto max-w-full mx-auto my-4"
-        />
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyLoad height={200}>
+          <img
+            src={aboutimg}
+            alt="Your Image"
+            className="h-auto max-w-full mx-auto my-4"
+          />
+        </LazyLoad>
+      </Suspense>
       <div className="max-w-2xl mx-auto text-center mb-8">
         <h2 className="text-4xl font-bold mb-4">Our Story</h2>
         <p className="mb-4">
@@ -54,11 +61,13 @@ function AboutUs() {
         <h2 className="text-4xl font-bold mb-4">Our Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Team Member Card */}
-          <Cards m1={m1} occupation="farmer" name="no name" />
-          <Cards m1={m2} occupation="farmer" name="Sourabh" />
-          <Cards m1={m3} occupation="farmer" name="no name" />
-          <Cards m1={m4} occupation="farmer" name="no-name" />
-          <Cards m1={m6} occupation="farmer" name="no name" />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Cards m1={m1} occupation="farmer" name="no name" />
+            <Cards m1={m2} occupation="farmer" name="Sourabh" />
+            <Cards m1={m3} occupation="farmer" name="no name" />
+            <Cards m1={m4} occupation="farmer" name="no-name" />
+            <Cards m1={m6} occupation="farmer" name="no name" />
+          </Suspense>
         </div>
       </div>
 
@@ -120,44 +129,9 @@ function AboutUs() {
           </form>
         </div>
         {/* Contact Info */}
-        <div className="flex flex-col sm:flex-row lg:flex-row  my-200px  justify-center space-y-8 sm:space-y-0 lg:space-x-16 text-white">
-          <div className="flex justify-center">
-          
-            <FaFacebookF className="h-24 mt-0  mb-5 ml-10 mr-5" />
-           
-
-            <FaInstagram  className="h-24 ml-10 mr-9"/>
-          
-          </div>
-          <div className="bg-white hidden sm:block h-24 w-[4px] mt-0"></div>
-          <div className=" flex flex-col items-center">
-            {" "}
-            {/* Hide on small screens */}
-            <span>Dig Bungalow, Green Park</span>
-            <br />
-            <span>Colony, Jamalpura, Bhopal,</span>
-            <br />
-            <span>Madhya Pradesh 462001</span>
-          </div>
-          <div className="bg-white  hidden sm:block h-24 w-[4px] mt-0"></div>
-          <div className="flex flex-col lg:flex items-center">
-            {" "}
-            {/* Center contact info */}
-            <span>info.bharatpestcontro@</span>
-            <br />
-            <span>gmail.com</span>
-            <br />
-            <span>+91 8319458245</span>
-          </div>
-          <div className="bg-white  hidden sm:block h-24 w-[4px] mt-0"></div>
-          <div className="flex flex-col lg:flex items-center">
-            {" "}
-            {/* Center contact info */}
-            <span>© 2023 by Bharat Pest Control.</span>
-            <br />
-            <span>Website Designed by Wisdom Visuals</span>
-          </div>
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Footer />
+        </Suspense>
       </div>
     </div>
   );

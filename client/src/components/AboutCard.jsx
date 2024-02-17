@@ -1,5 +1,5 @@
 import React from "react";
-
+import Footer from "./Footer";
 function AboutCard(props) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
