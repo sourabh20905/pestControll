@@ -82,6 +82,11 @@ const Header = () => {
           </div>
         </nav>
       </div>
+      <div className=" h-10 flex justify-center bg-[#4d7c0f] lg:hidden">
+        <h1 className="self-center text-xl font-semibold text-white">
+          Call us Now : 91887493433
+        </h1>
+      </div>
     </div>
   );
 };
